@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Nick Monaco <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
+- **Dot Number**: monaco.60 <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
+- **Due Date**: 9/16 @ 4:10 PM EST <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -98,23 +90,22 @@ do good work.
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+GOALS OF NICK "MANSLAYER" MONACO:
+I am the NEXT KANYE WEST minus the anti-Semitism. I am a liberal online personality that makes music and argues and aphorizes about philosophy and politics. I am a master programmer that worships code as much as Torvalds and I will be the Dr. Gregory House of coding but my diagnostic fixations will be based on computers and programs instead of patients; I am already one drug closer to becoming Gregory House (who has a Vicodin addiction) now that I have been prescribed Vyvanse for my inattentive ADHD.
+
+PERSONAL UNDERTAKINGS OF "MANSLAYER":
+I am THE ONLY PERSON ALIVE that makes REAL MUSIC besides Kanye West and Nujabes (except Kanye West's music was only good before 2011 and Nujabes is dead). I make music in FL Studio which is inspired by Nujabes and Kanye West (beats); I "play" the guitar and piano to come up with chords and melodies. I am a liberal atheist that loves Joe Biden and Kamala Harris so I argue with religious student group staff members over lunch at OSU or I post tweets or snaps arguing with Republicans and Leftists online. I have a dark sense of humor and philosophical views inspired by among many people, Friedrich Nietzsche, that I share online.
+
+TL;DR:
+I want the populist rhetoric of Donald Trump, the political views of Joe Biden and the confidence/don't-care-mentality of Kanye West while being funnier than Dave Chapelle.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -123,8 +114,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -157,10 +146,10 @@ format, we can be more confident that your designs will be possible.
         mutate `this`.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-        - No. All methods work with integers or other NaturalNumbers.
+      - No. All methods work with integers or other NaturalNumbers.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-        - Yes. NaturalNumber is base 10, and we track that in a constant called
+      - Yes. NaturalNumber is base 10, and we track that in a constant called
           `RADIX`.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
@@ -192,70 +181,105 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: `ManslayerProg`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - The purpose of this component is to model a musical chord progression for an entire song that would put a smile on the face of Manslayer (Nick Monaco). The intent is to keep a simple kernel that provides minimal functionality to represent a chord progression that Manslayer tolerates. Then, more complex musical operations in the secondary interface to put a smile on Manslayer's face.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `int BPM()`: returns Beats Per Minute (BPM) of `this`
+    - `void setBPM(int BPM)`: sets BPM of `this` to `BPM`
+    - `boolean openMode()`: returns true if `this` has an open cell (`ChordCell` that only has one chord), returns false otherwise
+    - `int cellCount()`: returns the number of `ChordCell`(s) in `this` (closed cells or cells that have two chords)
+    - `void openCell(int cellNum, String openChord, int beats)`: if `cellNum` = 0 (or args are empty) AND `!openMode`, creates an open cell at the end of `this` with values `openChord` and `beats` (how much time two chords will evenly share); if `cellNum` > 0, replaces the first chord and beat values of `ManslayerProg(cellNum)` (`ChordCell` at `cellNum`) with `openChord` and `beats`
+    - `void closeCell(int cellNum, String closeChord, int beats)`: if `cellNum` = 0 (or args are empty) AND `openMode`, closes the open cell in `this`, setting the second chord value to `closeChord` and setting beats to `beats`; if `cellNum` > 0, replaces the second chord and beat values of `ManslayerProg(cellNum)` with `closeChord` and `beats`
+    - `void slice(String slice)`: sets the slicing (mixing) of `ManslayerProg` to `slice`; example of a `slice` would be `slice = "111222111222"` (plays `ChordCell` at `cellNum` 1 for three times, then `ChordCell` at `cellNum` 2 for three times...)
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `ManslayerProg subClone(int cellStart, int cellEnd)`: returns clone of `ChordCell`(s) from [cellStart, cellEnd] in `this`
+    - `ChordCell cell(int cellNum)`: returns the `ChordCell` at `cellNum` in `this`
+    - `void switch(int cellNum1, int cellNum2)`: switches position of `ChordCell`(s) at position `cellNum1` and `cellNum2`
+    - `void insert(int cellNum, ChordCell x)`: inserts `ChordCell` `x` at position `cellNum`, moving each cell to the right of `x` one position to the right
+    - `void remove(int cellNum)`: removes `ChordCell` at position `cellNum` in `this`
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would be mutable because methods change the value of `this`; For example, `void remove(int cellNum)` would modify `this` by erasing `ManslayerProg(cellNum)` (`ChordCell` at `cellNum`) from `this`
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would rely on `ChordCell` that has attributes `openChord` (first chord), `closeChord` (second chord) and `beats` (limited to factors of 8); This class exists in order to model what "good" music sounds like by restricting the amount of chords allowed per entry in `ManslayerProg` to 2 and limiting the amount of beats to only factors of 8 (Manslayer enjoys music with a handful of chords repeated throughout a song)
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component needs constants for the initial beat value (8) for each `ChordCell`, the initial BPM (100) and constants for the range of acceptable BPM (60-120) because "good" music is within 60-120 BPM with sequences of chords that change up (aren't repeated for 600 beats, but instead only 8 or less)
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, I forgot what the difference between Kernel and Secondary methods were so I just placed the cooler methods in Kernel and the less cool ones in Secondary; In the future I will do something like have `remove`, `insert` and `cell` be Kernel methods and then use those in the implementation of for example: `openCell`, where I will insert `ChordCell` at `cellNum` provided with `openChord` and `beat` values
 
-
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: `PresidentActions`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - An organized model of the actions (acts, bills...) that a president (and their administration) has done including important information like whether it was bipartisan, where money is going to, what issues do the actions deal with (abortion, infastructure, immigration...).
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - `int length()`: returns number of actions in `this`
+    - `void addAction(String type, String issues, String parties, String president)`: adds entry of type `Action` to `this` with attributes `type`, `issues`, `parties` and `president` (who was in office)`
+    - `Action removeAction(int index)`: removes action from `this` and returns it
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void sortByPartisanship(String order)`: sorts `this` by `order` (for example "RDB" would sort by republican actions, then democrat actions, then bipartisan actions in left to right order in `this`)
+    - `PresidentActions getBipartisan(PresidentActions x)`: returns object of type `PresidentActions` containing only the bipartisan `Actions` in `this`
+    - `PresidentActions getRepublican... (same as above but for republican actions)`
+    - `PresidentActions getDemocrat... (same as above but for democrat actions)`
+    - `String whoIsMoreBipartisan(PresidentActions a, PresidentActions b...)`: returns string from left to right (bipartisan to least partisan) containing names of presidents gathered from comparing actions in `a` `b`... in order to declare who is most to least bipartisan (for example: "Kamala, Biden, Trump").
+    - `String whoCaresMoreAbout(String issue, PresidentActions a, PresidentActions b...)`: returns string with names from left to right of presidents (care most about `issue` to care least about `issue`) based off `a`, `b`...
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component allows for the adding and removing of entries (changes `this`).
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, it relies on `Actions` with attributes such as `type`, `issues`, `parties`, `president in order to describe actions that a president has taken
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Not all of them or at least it would be difficult for the last couple of methods.
 
-
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: `Manslice`
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - A representation for music that Manslayer likes that includes rhythm, melody and chord progression (or more) which can be exported to Fl Studio through MIDI-Scripting (<https://youtu.be/JYslZkc90GI?t=954>); An image of what an Fl Studio song looks like: ![alt text](<FL Studio song 23 image.png>)
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - `void addTrack(int trackIndex, K trackEntry)`: adds an empty track to `this` at location `trackIndex` that only allows type `K` entries (i.e. `ChordCells`, `MelodicCells`, `DrumCells`)
+    - `void removeTrack(int trackIndex)`: removes track from `this` corresponding to `trackIndex`
+    - `int trackCount()`: returns the number of tracks in `this`
+    - `int cellCount(int trackIndex)`: returns the number of closed cells in a track in `this` corresponding to `trackIndex`
+    - `boolean openMode(int trackIndex)`: returns true if there is an open cell in the track of `this` corresponding to `trackIndex`, false otherwise
+    - `void add(int cellNum)`: adds and replaces `entry` to `this` corresponding to the track that accepts type `K` entries to position `cellNum`
+    - `K remove(int cellNum, K entry)`: removes `entry` at `cellNum` in `track` corresponding to type `K` entries and returns it
+    - `int findTrack(K entry)`: finds the track in `this` containing `K` entries and returns its track index
+    - `int BPM()`: returns BPM of `this`
+    - `void setBPM(int BPM)`: sets BPM of `this` to `BPM`, a value within 60-120
+    - `K getEntry(int trackNum, int cellNum)` gets entry in `this` located in `track` corresponding to `trackIndex` at position `cellNum`
+    - `Track getTrack(int trackNum)`: gets track located at `trackNum` in `this`
+    - `void addTrack(Track x, int trackIndex)`: overloading of first method in Kernel; adds `x` to `this` at `trackIndex`
+    - `String voice(int trackIndex)`: gets instrument of `Track` at `trackIndex` in `this`
+    - `void setVoice(int trackIndex, String voice)`: sets instrument of `Track` at `trackIndex` in `this`
+  - **Secondary Methods**
+    - `void openCell(int cellNum, String firstPhrase, int beats)`: (For future Nick: `beats` is unnecessary) if `cellNum` == 0 and `!openMode` for track containing `K` entries (where `K` corresponds to contents of `firstPhrase`), adds an open cell to `this` with values for `firstPhrase` and `beats`; if `cellNum` > 0, replaces values of `K` entry at `cellNum` with `firstPhrase` and `beats`
+    - `void closeCell(int cellNum, String secondPhrase, int beats)`: if `cellNum` == 0 and `openMode`, closes the open cell in the track of `this` with values `secondPhrase` and `beats`; if `cellNum` > 0, replaces values of entry `K` at `cellNum` with `secondPhrase` and `beats`
+    - `Manslice subClone(int trackStart, int trackEnd, int cellNum1, int cellNum2)`: creates a clone of `this` containing tracks [trackStart, trackEnd] and the cells [cellNum1, cellNum2] in each selected track
+    - `void switchCell(int trackIndex, int cellNum1, int cellNum2)`: switches position of cells at `cellNum1` and `cellNum2` in `Track` designated by `trackIndex`
+    - `void insertCell(int cellNum, K entry)`: inserts `K` entry into `Track` of `this` with `K` entries at `cellNum`
+    - `void exportSong(SimpleWriter output)`: exports `this` to a file `output` after which its contents will ideally be interpreted and converted to MIDI file which could then be opened in FL Studio
+    - `void exportTrack(int trackNum, SimpleWriter output)`: exports contents of `Track` at `trackNum` in `this` to a file `output` after which can be converted to MIDI and opened in FL Studio
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, methods can change its value. For example, `removeTrack` will remove a track from `this`
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would rely on `Track`, with attributes for the instrument of the track and the type of entries in track (`MelodicCells`, `BeatCells`, `ChordCell`) to model the format of an FL Studio song ![image]("C:\Users\xxnin\Downloads\images\FL Studio song 23 image.png"); It also relies on `MelodicCell` for melody track, `BeatCell` for drum track, `ChordCell` for chord track, each containing an attribute for `firstPart` (i.e. `firstChord` for `ChordCell`), `secondPart` and `beats` (NOTE: `beats` may be removed in the future due to redundancy). However, these classes could be consolidated into one class `Cells` which would allow for users to create even more `Cells` like a `BassCell`, `StringCell`...
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, this component would need constants for allowed BPM (60-120), for initial BPM (100), for initial `beat` value (8), an enum for chord names ("Gmaj7"...), an enum for note values ("A7", "C4"...) an enum for instruments ("Kick", "Snare", "Piano", "Violin"), and a constant for the maximum subbeats (16th notes) in a 4 beat phrase (4 *2* 2 = 16); We need note values and chord names to know what notes are used in the song and we need constants for range of BPM and beat values in order to make the song sound "good" (crazy fast or crazy slow BPM is not only harder to interpret, it also doesn't sound good) AND we don't want a huge number of subbeats or an infinite number of subbeats because that would be either hard or impossible to interpret (which is why we limit the fastest note to 16th notes, the slowest note to whole note)
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, for most methods I believe they can be implemented using `addTrack, removeTrack, add, remove, openMode, getTrack...`; For example, the implementation of `openCell` could involve `openMode` to check if we can add an open cell or not (checks if there's already an open cell in `this`) and then use `add` to add the open cell, otherwise if `cellNum` > 0, it uses `add` to replace an entry.
 
 ## Post-Assignment
 
@@ -263,8 +287,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -302,8 +324,6 @@ designs, so we can gauge your progress. Please keep it updated at each stage
 of development.
 
 ### Submission
-
-<!-- TODO: read the submission instructions then delete this comment -->
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
