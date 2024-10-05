@@ -192,6 +192,7 @@ public class Manslice {
     }
 
     public static void main(String[] args) {
+        //main
         Manslice manslice = new Manslice();
         int beats = 8, bpm = 100;
         String openRoot = "60", openType = "maj7", closeRoot = "64",
